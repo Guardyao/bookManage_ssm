@@ -62,7 +62,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/page/admin/**","/api/admin/**").hasRole("admin")
                 .antMatchers("/page/user","/api/user/**").hasRole("user")
 //                .antMatchers("/index").hasAnyRole("user","admin")
-                .antMatchers("/**").hasAnyRole("user","admin")    //所有请求必须登陆并且是user角色才可以访问（不包含上面的静态资源）\
+                .antMatchers("/**").hasAnyRole("user","admin")    //所有请求必须登陆并且是user角色才可以访问（不包含上面的静态资源）
 //                .anyRequest().hasRole("admin")
                 .and()
                 .formLogin()
