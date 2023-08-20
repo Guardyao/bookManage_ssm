@@ -29,7 +29,7 @@ public class RootConfiguration {
         dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/bookmanagessm");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
-        dataSource.setPassword("1228669869");
+        dataSource.setPassword("123456");
         return dataSource;
     }
 
