@@ -57,13 +57,13 @@ public class AuthServiceImpl implements AuthService
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("2265723996@qq.com", "nbkzupprnoymdhji");
+                return new PasswordAuthentication("xzxxxxxx", "xxxxxxx");
             }
         });
 
         // 创建邮件消息
         Message emailMessage = new MimeMessage(session);
-        emailMessage.setFrom(new InternetAddress("2265723996@qq.com"));
+        emailMessage.setFrom(new InternetAddress("2xxxxxm"));
         emailMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
         emailMessage.setSubject(subject);
         emailMessage.setText(message);
