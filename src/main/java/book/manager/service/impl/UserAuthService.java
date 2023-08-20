@@ -18,7 +18,7 @@ public class UserAuthService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        AuthUser user = mapper.getUserByName(s);  //从数据库根据用户名获取密码
+        AuthUser user = mapper.getUserByName(s);  //从数据库根据用户名获取用户
         if(user == null)
             throw new UsernameNotFoundException("登录失败，用户名不存在！");
         return User   //这里需要返回UserDetails，SpringSecurity会根据给定的信息进行比对

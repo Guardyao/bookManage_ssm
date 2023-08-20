@@ -72,7 +72,7 @@
             <version>3.4.5</version>
         </dependency>
 
-        <!--  其他工具框架依赖：Lombok、Slf4j  -->
+        <!--  其他工具框架依赖：Lombok、Slf4j、mail,json -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -83,6 +83,25 @@
             <artifactId>slf4j-jdk14</artifactId>
             <version>1.7.32</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+
 
         <!--  ServletAPI  -->
         <dependency>

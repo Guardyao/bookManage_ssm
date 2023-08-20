@@ -23,7 +23,8 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
     //我们需要使用ThymeleafViewResolver作为视图解析器，并解析我们的HTML页面
     @Bean
-    public ThymeleafViewResolver thymeleafViewResolver(@Autowired SpringTemplateEngine springTemplateEngine){
+    public ThymeleafViewResolver thymeleafViewResolver(@Autowired SpringTemplateEngine springTemplateEngine)
+    {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setOrder(1);
         resolver.setCharacterEncoding("UTF-8");
@@ -33,7 +34,8 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
     //配置模板解析器
     @Bean
-    public SpringResourceTemplateResolver templateResolver(){
+    public SpringResourceTemplateResolver templateResolver()
+    {
         SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
         resolver.setSuffix(".html");
         resolver.setPrefix("/WEB-INF/template/");
@@ -43,7 +45,8 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
     //配置模板引擎Bean
     @Bean
-    public SpringTemplateEngine springTemplateEngine(@Autowired ITemplateResolver resolver){
+    public SpringTemplateEngine springTemplateEngine(@Autowired ITemplateResolver resolver)
+    {
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(resolver);
         engine.addDialect(new SpringSecurityDialect());   //添加针对于SpringSecurity的方言
@@ -52,13 +55,15 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
     //开启静态资源处理
     @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)
+    {
         configurer.enable();
     }
 
     //静态资源路径配置
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(ResourceHandlerRegistry registry)
+    {
         registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/static/");
     }
 }

@@ -23,7 +23,8 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class RootConfiguration {
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource()
+    {
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/bookmanagessm");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -33,14 +34,16 @@ public class RootConfiguration {
     }
 
     @Bean
-    public SqlSessionFactoryBean sqlSessionFactoryBean(@Autowired DataSource dataSource){
+    public SqlSessionFactoryBean sqlSessionFactoryBean(@Autowired DataSource dataSource)
+    {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         return bean;
     }
     //事务
     @Bean
-    public TransactionManager transactionManager(@Autowired DataSource dataSource){
+    public TransactionManager transactionManager(@Autowired DataSource dataSource)
+    {
         return new DataSourceTransactionManager(dataSource);
     }
 }
